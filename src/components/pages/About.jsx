@@ -177,12 +177,13 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center overflow-hidden">
-                <img
-                  src="/api/placeholder/600/600"
-                  alt="Precision Works facility"
-                  className="w-full h-full object-cover"
-                />
+<div className="aspect-square bg-gradient-to-br from-primary-100 via-primary-200 to-secondary-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-400/20"></div>
+                <div className="relative z-10 text-center">
+                  <ApperIcon name="Building2" size={64} className="text-primary-600 mx-auto mb-4" />
+                  <div className="text-lg font-semibold text-primary-800">Precision Works</div>
+                  <div className="text-sm text-primary-600">Manufacturing Facility</div>
+                </div>
               </div>
               <div className="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-xl shadow-lg">
                 <div className="text-center">
@@ -402,13 +403,14 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center overflow-hidden"
+className="aspect-video bg-gradient-to-br from-primary-100 via-secondary-100 to-accent-100 rounded-2xl flex items-center justify-center overflow-hidden relative"
             >
-              <img
-                src="/api/placeholder/600/400"
-                alt="Manufacturing facility interior"
-                className="w-full h-full object-cover"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-300/30 to-accent-300/30"></div>
+              <div className="relative z-10 text-center">
+                <ApperIcon name="Factory" size={48} className="text-primary-600 mx-auto mb-3" />
+                <div className="text-lg font-semibold text-primary-800">Advanced Manufacturing</div>
+                <div className="text-sm text-primary-600">45,000 sq ft facility</div>
+              </div>
             </motion.div>
           </div>
         </div>

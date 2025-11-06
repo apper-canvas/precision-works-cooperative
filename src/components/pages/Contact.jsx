@@ -309,10 +309,12 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <ApperIcon name="MapPin" size={48} className="text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Interactive Map</p>
+<div className="aspect-video bg-gradient-to-br from-primary-100 via-secondary-100 to-accent-100 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-200/50 to-accent-200/50"></div>
+                <div className="relative z-10 text-center">
+                  <ApperIcon name="MapPin" size={48} className="text-primary-600 mx-auto mb-2" />
+                  <p className="text-primary-700 font-semibold">Manufacturing Location</p>
+                  <p className="text-primary-600 text-sm">Industrial District</p>
                 </div>
               </div>
 

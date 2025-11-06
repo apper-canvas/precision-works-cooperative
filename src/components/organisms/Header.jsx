@@ -51,7 +51,9 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <div className="bg-gradient-to-br from-primary-600 to-accent-500 p-2 rounded-lg">
-                <ApperIcon name="Settings" size={24} className="text-white" />
+<div className="w-8 h-8 bg-gradient-to-br from-accent-400 to-accent-600 rounded-lg flex items-center justify-center">
+                  <ApperIcon name="Settings" size={16} className="text-white" />
+                </div>
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Precision Works</h1>

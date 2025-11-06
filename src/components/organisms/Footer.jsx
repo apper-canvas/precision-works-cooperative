@@ -11,7 +11,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <div className="bg-gradient-to-br from-primary-600 to-accent-500 p-2 rounded-lg">
-                <ApperIcon name="Settings" size={24} className="text-white" />
+<div className="w-8 h-8 bg-gradient-to-br from-accent-400 to-accent-600 rounded-lg flex items-center justify-center">
+                  <ApperIcon name="Settings" size={16} className="text-white" />
+                </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Precision Works</h3>

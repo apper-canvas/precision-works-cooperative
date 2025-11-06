@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
-
 const ProductModal = ({ product, isOpen, onClose, onRequestQuote }) => {
   useEffect(() => {
     if (isOpen) {

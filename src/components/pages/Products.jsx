@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { productService } from "@/services/api/productService";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Select from "@/components/atoms/Select";
+import Contact from "@/components/pages/Contact";
 import ProductCard from "@/components/molecules/ProductCard";
 import ProductModal from "@/components/molecules/ProductModal";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
-import { productService } from "@/services/api/productService";
+import Loading from "@/components/ui/Loading";
 
 const Products = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -73,9 +76,9 @@ const Products = () => {
     setIsModalOpen(true);
   };
 
-  const handleRequestQuote = () => {
-    // Navigate to contact page or show quote form
-    window.scrollTo(0, 0);
+const handleRequestQuote = () => {
+    // Navigate to contact page for quote request
+    navigate('/contact');
   };
 
   const handleClearFilters = () => {

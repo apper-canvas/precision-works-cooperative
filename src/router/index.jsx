@@ -8,6 +8,8 @@ const Capabilities = lazy(() => import("@/components/pages/Capabilities"));
 const Quality = lazy(() => import("@/components/pages/Quality"));
 const About = lazy(() => import("@/components/pages/About"));
 const Contact = lazy(() => import("@/components/pages/Contact"));
+const BlogInsights = lazy(() => import("@/components/pages/BlogInsights"));
+const BlogPost = lazy(() => import("@/components/pages/BlogPost"));
 const NotFound = lazy(() => import("@/components/pages/NotFound"));
 
 const PageSuspense = ({ children }) => (
@@ -48,9 +50,17 @@ const mainRoutes = [
     path: "about",
     element: <PageSuspense><About /></PageSuspense>
   },
-  {
+{
     path: "contact",
     element: <PageSuspense><Contact /></PageSuspense>
+  },
+  {
+    path: "insights",
+    element: <PageSuspense><BlogInsights /></PageSuspense>
+  },
+  {
+    path: "insights/:id",
+    element: <PageSuspense><BlogPost /></PageSuspense>
   },
   {
     path: "*",

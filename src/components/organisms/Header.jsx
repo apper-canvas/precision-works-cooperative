@@ -28,7 +28,8 @@ const Header = () => {
     { name: "Capabilities", href: "/capabilities" },
     { name: "Quality", href: "/quality" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" }
+{ name: "Contact", href: "/contact" },
+    { name: "Insights", href: "/insights" }
   ];
 
   const isActive = (path) => {

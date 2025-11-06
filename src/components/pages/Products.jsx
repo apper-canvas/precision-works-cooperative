@@ -245,16 +245,18 @@ const handleRequestQuote = () => {
           <h2 className="text-3xl font-bold mb-4">
             Don't See What You Need?
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+<p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             We specialize in custom manufacturing solutions. Contact us to discuss 
             your specific requirements and get a personalized quote.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg" icon="MessageCircle">
+          <div className="text-center">
+            <Button 
+              variant="accent" 
+              size="lg" 
+              icon="MessageCircle"
+              onClick={handleRequestQuote}
+            >
               Request Custom Quote
-            </Button>
-            <Button variant="secondary" size="lg" icon="Phone">
-              Speak with Engineer
             </Button>
           </div>
         </motion.div>

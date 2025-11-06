@@ -1,10 +1,51 @@
 import React, { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
 const ProductModal = ({ product, isOpen, onClose, onRequestQuote }) => {
+  const downloadSpecs = () => {
+    try {
+      if (!product?.specifications) {
+        toast.error('No specifications available for this product');
+        return;
+      }
+
+      // Generate formatted specification content
+      let specContent = `${product.name} - Technical Specifications\n`;
+      specContent += `${'='.repeat(50)}\n\n`;
+      
+      const specs = product.specifications;
+      
+      // Add all available specifications
+      Object.entries(specs).forEach(([key, value]) => {
+        if (value && value !== '') {
+          const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+          specContent += `${formattedKey}: ${Array.isArray(value) ? value.join(', ') : value}\n`;
+        }
+      });
+      
+      specContent += `\nGenerated on: ${new Date().toLocaleDateString()}\n`;
+      
+      // Create and download file
+      const blob = new Blob([specContent], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${product.name.replace(/[^a-zA-Z0-9]/g, '_')}_specifications.txt`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      
+      toast.success('Specifications downloaded successfully');
+    } catch (error) {
+      console.error('Download failed:', error);
+      toast.error('Failed to download specifications');
+    }
+  };
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -136,9 +177,10 @@ const ProductModal = ({ product, isOpen, onClose, onRequestQuote }) => {
                       >
                         Request Quote
                       </Button>
-                      <Button
+<Button
                         variant="outline"
                         icon="Download"
+                        onClick={downloadSpecs}
                       >
                         Download Specs
                       </Button>
